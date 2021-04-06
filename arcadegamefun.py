@@ -18,7 +18,8 @@ timer = 0
 colorlist = [BLACK,RED,GREEN,BLUE,PURPLE,LILAC,GREY,PUTRID,YELLOW]
 
 #List of settings for the game:
-tripleshot = False
+tripleshot = True
+powermodetoggle = True
 
 
 
@@ -134,6 +135,9 @@ while not done:
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_SPACE:
                     bulletspawn(1,player.rect.x,player.rect.y)
+                    if tripleshot == True:
+                        bulletspawn(1,player.rect.x +15, player.rect.y)
+                        bulletspawn(1,player.rect.x -15, player.rect.y)
                 elif event.key == pygame.K_w:
                     screen.fill(WHITE)
                 elif event.key == pygame.K_t:
